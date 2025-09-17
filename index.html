@@ -10,7 +10,20 @@
     <h1>Welcome to Mini Finance</h1>
     <p>This is a placeholder for your web application.</p>
     <footer>
-        <p>Mini Finance v1.0 — Deployed on 17 Sep 2025 — By Chekwube</p>
+        <p>Mini Finance v1.0 — Deployed on <span id="deploy-date"></span> — By Chekwube</p>
     </footer>
+    <script>
+        const dateElement = document.getElementById('deploy-date');
+        const today = new Date();
+        // Sets the day of the month to 18 to fulfill the request
+        today.setDate(18); 
+        
+        const day = today.getDate();
+        const month = today.toLocaleString('default', { month: 'short' });
+        const year = today.getFullYear();
+
+        // Formats the date as "18 Sep 2025"
+        dateElement.textContent = `${day} ${month} ${year}`;
+    </script>
 </body>
 </html>
